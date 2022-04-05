@@ -1,0 +1,671 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	overflow-x: hidden;
+}
+a {
+	text-decoration: none;
+	color: var(--text-color);
+	cursor: pointer;
+}
+.dark {
+	--nav-text-color: white;
+	--home-showcase: rgb(5, 4, 54);
+	--primary-color: rgb(36, 55, 119);
+	--slider-header: rgb(40, 158, 179);
+	--slider-overlay-color: rgb(150, 206, 223);
+	--project-info: rgb(163, 205, 224);
+	--showcase-text-color: black;
+	--arrow-color: black;
+	--projects-section-background: rgb(221, 229, 236);
+	--external-link-color: rgb(182, 67, 0);
+	--external-link-hover: rgb(104, 39, 2);
+
+	--project-page-background: rgb(142, 207, 224);
+	--navbar-text: white;
+	--about-color: white;
+	--arrow-hover-background: aqua;
+	--arrow-hover-color: #333;
+	--technologies-color: white;
+}
+.light {
+	--nav-text-color: rgb(0, 0, 0);
+
+	--home-showcase: rgb(204, 246, 204);
+	--primary-color: rgb(97, 221, 66);
+	--slider-header: rgb(7, 155, 56);
+	--slider-overlay-color: rgb(198, 223, 150);
+	--showcase-text-color: rgb(0, 0, 0);
+	--projects-section-background: rgb(255, 255, 255);
+
+	--project-info: rgb(232, 245, 118);
+	--arrow-color: green;
+	--external-link-color: rgb(20, 100, 0);
+	--project-page-background: rgb(231, 245, 226);
+	--navbar-text: white;
+	--about-color: rgb(0, 0, 0);
+	--arrow-hover-background: rgb(232, 245, 118);
+	--arrow-hover-color: #333;
+
+	--technologies-color: rgb(12, 12, 12);
+}
+.laker {
+	--nav-text-color: rgb(209, 255, 3);
+
+	--home-showcase: rgb(101, 0, 168);
+	--about-color: rgb(238, 255, 3);
+
+	--primary-color: rgb(144, 59, 255);
+	--slider-header: rgb(82, 10, 124);
+	--slider-overlay-color: rgb(212, 119, 212);
+	--showcase-text-color: rgb(236, 251, 16);
+	--projects-section-background: rgb(249, 255, 162);
+
+	--project-info: rgb(145, 11, 168);
+	--arrow-color: rgb(248, 31, 255);
+	--external-link-color: rgb(216, 17, 251);
+	--project-page-background: rgb(246, 244, 124);
+	--navbar-text: white;
+	--arrow-hover-background: rgb(232, 245, 118);
+	--arrow-hover-color: #333;
+
+	--technologies-color: rgb(214, 248, 24);
+}
+
+/*Navbar Styles*/
+
+main .home-image {
+	background-color: var(--home-showcase);
+	height: 70vh;
+	position: relative;
+}
+.main .home-image:before {
+	position: absolute;
+	height: 70vh;
+	width: 100vw;
+	opacity: 0.7;
+}
+
+nav {
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	color: var(--nav-text-color);
+	background-color: var(--primary-color);
+	z-index: 100;
+	text-align: center;
+	height: 5rem;
+	opacity: 1;
+}
+
+.nav-container {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	max-width: 1400px;
+	margin: 0 auto;
+	transform: translateX(15%);
+}
+
+nav img {
+	align-self: center;
+	color: white;
+}
+
+nav ul {
+	padding: 1rem;
+	z-index: 1000; /*make sure its always on top*/
+}
+/*styles for the direct child ul of the navbar  */
+.pages {
+	display: block;
+}
+.pages li {
+	transition: all 1s;
+}
+.pages h3 {
+	font-size: 1.25rem;
+}
+.pages li:hover {
+	font-weight: bold;
+	color: orange;
+}
+nav li {
+	padding: 0.75rem;
+	display: inline-block;
+}
+li p {
+	margin-top: 1rem;
+}
+
+.settings {
+	background-color: rgb(128, 133, 202);
+}
+
+/*dropdowns in the navbar*/
+.themes li,
+.settings li {
+	display: block;
+	color: black;
+}
+
+/*Hero Styles*/
+.about {
+	position: absolute;
+	top: 5rem;
+	height: 60vh;
+	z-index: 1;
+	color: var(--about-color);
+	width: 100%;
+	display: flex;
+}
+
+.about .grid {
+	display: flex;
+	padding: 2rem;
+	grid-template-columns: repeat(2, 1fr);
+	width: 80vw;
+	max-width: 1200px;
+	grid-gap: 4rem;
+	margin: 0 auto;
+	justify-content: flex-end;
+}
+.grid * {
+	margin: 1rem 0;
+}
+.grid div {
+	display: flex;
+	align-self: center;
+	flex-direction: column;
+}
+.grid p {
+	font-size: 1.25rem;
+}
+.grid h2 {
+	font-size: 3rem;
+	box-shadow: 0 5px red;
+}
+.grid h4,
+.grid h5 {
+	font-size: 1.25rem;
+}
+
+.home-icon {
+	height: 50%;
+	transform: translateX(20%);
+	align-self: center;
+}
+
+/*showcase slider styles*/
+
+.section-container {
+	background-color: var(--slider-overlay-color);
+}
+.showcase {
+	display: flex;
+	height: 80vh;
+	color: black;
+	width: 100%;
+	max-width: 2200px;
+	transition: translate 1s;
+	align-items: center;
+	margin: 0 auto;
+	justify-content: space-between;
+	position: relative;
+}
+
+/* showcase overlay*/
+.showcase::before {
+	content: "";
+	height: 100px;
+	max-width: 2200px;
+	position: absolute;
+	background-color: var(--slider-overlay-color);
+	opacity: 0.3;
+	height: 80vh;
+	width: 100vw;
+}
+
+.showcase p {
+	margin: 2rem auto;
+	max-width: 75%;
+	text-align: center;
+	font-weight: 600;
+}
+
+/*Styles for the sliding text in the middle of slider */
+.project-info {
+	display: flex;
+	margin: 0 auto;
+	flex-direction: column;
+	align-self: center;
+	justify-self: center;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	color: var(--showcase-text-color);
+
+	transform: translate(-47.5%, 0%);
+	background-color: var(--project-info);
+	transition: translate, 1s;
+	align-items: center;
+	padding: 1rem;
+}
+/*The previous slider item translated to the left*/
+.prev {
+	opacity: 0;
+	transform: translate(-125%, 0);
+}
+/*The next slider item translated to the right*/
+.next {
+	opacity: 0;
+	transform: translate(50%, 0);
+}
+
+.btn {
+	padding: 1rem 0.5rem;
+	background-color: rgb(117, 0, 0);
+	border-radius: 5px;
+	color: white;
+	margin: 0 auto;
+}
+.project-info a {
+	background-color: var(--slider-header);
+	font-size: 1.35rem;
+	color: var(--about-color);
+	font-weight: bold;
+	padding: 1rem 1.5rem;
+}
+
+.project-info h3 {
+	font-size: 2rem;
+}
+.project-info p {
+	font-size: 1.25rem;
+}
+/*Arrows to toggle slider*/
+.left-arrow,
+.right-arrow {
+	align-self: center;
+	justify-self: flex-end;
+	margin-left: 1rem;
+	padding: 0.5rem;
+	border-radius: 5px;
+	background: var(--arrow-color);
+	font-size: 1.5rem;
+	text-align: center;
+	/* position: absolute; */
+	color: var(--nav-text-color);
+	cursor: pointer !important;
+	transition: all 0.5s;
+	z-index: 10;
+}
+.right-arrow {
+	margin-right: 1rem;
+}
+.left-arrow:hover,
+.right-arrow:hover {
+	cursor: pointer;
+	background: var(--arrow-hover-background);
+	color: var(--arrow-hover-color);
+}
+
+/*the button that turns the slider off and on */
+.slider {
+	position: absolute;
+	top: 15%;
+	padding: 1rem;
+	right: 20%;
+	font-size: 1.15rem;
+	font-weight: bold;
+	cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+	.project-info h3 {
+		font-size: 1.5rem;
+	}
+	.project-info a {
+		background-color: black;
+
+		font-size: 1rem;
+		font-weight: bold;
+		padding: 0.75rem 1.25rem;
+	}
+	.project-info p {
+		font-size: 1.15rem;
+	}
+	.slider {
+		position: absolute;
+		top: 15%;
+		padding: 1rem;
+		right: 20%;
+		font-size: 1rem;
+		font-weight: bold;
+		cursor: pointer;
+	}
+}
+@media screen and (max-width: 650px) {
+	.project-info p {
+		font-size: 1rem;
+	}
+	.project-info {
+		width: 100%;
+	}
+}
+
+.hamburger-menu {
+	display: none;
+}
+/*Make sure that hte sidebar doesn't display for screens bigger than 768px*/
+@media screen and (min-width: 769px) {
+	.sidebar {
+		display: none;
+	}
+}
+
+/*Styles when the hamburger menu is displayed instead of navbar*/
+
+@media screen and (max-width: 768px) {
+	nav {
+		display: none;
+	}
+
+	.hamburger-menu {
+		opacity: 1;
+	}
+	nav {
+		z-index: 1;
+	}
+	nav img {
+		opacity: 0;
+	}
+	.pages-small {
+		list-style: none;
+		width: 100vw;
+		padding: 0;
+	}
+	.pages-small li {
+		padding: 2rem 1rem;
+		transition: all 0.75s;
+		width: 100%;
+	}
+	.pages-small li:hover {
+		background-color: rgb(142, 173, 202);
+		cursor: pointer;
+	}
+	.nav-links {
+		transition: all 0.75s;
+	}
+	.pages-small li:hover .nav-links {
+		transform: translateX(20px);
+	}
+	/*Hamburger Menu Lines*/
+	.line,
+	.line-top,
+	.line-bottom {
+		height: 3px;
+		background-color: white;
+		width: 100%;
+		position: relative;
+		transition: all 0.75s;
+	}
+
+	.line-top {
+		top: -5px;
+	}
+	.line-bottom {
+		top: 5px;
+	}
+
+	/*Mobile screens*/
+	@media screen and (max-width: 500px) {
+		.showcase p {
+			width: 100vw;
+			font-size: 1rem;
+		}
+		.left-arrow,
+		.right-arrow {
+			transform: scale(0.75);
+		}
+		.projects .grid {
+			width: 100vw;
+		}
+		.description {
+			width: 100vw;
+		}
+	}
+
+	.sidebar {
+		display: block;
+		position: fixed;
+		background-color: white;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transition: all 0.9s;
+		transform: translate(-100%);
+		z-index: 99;
+	}
+
+	.sidebar-open {
+		display: block;
+		transform: translate(0);
+		z-index: 50;
+	}
+	.hamburger-menu {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		background-color: rgb(3, 66, 66);
+		width: 50px;
+		padding: 0.25rem 0.5rem;
+		height: 50px;
+		position: fixed;
+		top: 0px;
+
+		right: 0px;
+		z-index: 100000000 !important;
+		cursor: pointer;
+	}
+
+	/*rotate the lines in the hamburger menu slightly on hover*/
+	.hamburger-menu:hover .line,
+	.hamburger-menu:hover .line-top,
+	.hamburger-menu:hover .line-bottom {
+		transform: rotate(15deg);
+	}
+}
+
+/*Projects section below the showcase*/
+
+.projects {
+	background: var(--projects-section-background);
+	color: black;
+	font-weight: bold;
+	padding-bottom: 3rem;
+}
+.projects h3 {
+	text-align: center;
+}
+.projects a {
+	margin: 1rem 0;
+	display: inline-block;
+}
+.projects .grid {
+	display: flex;
+	padding: 1rem;
+	width: 80vw;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding-bottom: 2.5rem;
+	border-bottom: 7px solid var(--primary-color);
+	position: relative;
+}
+.projects .last-project {
+	border: none;
+}
+.projects .img-link {
+	margin-top: -0.5rem;
+	margin-right: 5rem;
+}
+.projects img {
+	height: 300px;
+	width: 300px;
+	margin-top: 1rem;
+}
+.projects .btn {
+	padding: 0.5rem 1rem;
+	margin: 0 1rem;
+	font-size: 0.85rem;
+	font-weight: bold;
+}
+
+.project-links {
+	display: flex;
+	padding: 1rem;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.description {
+	max-width: 70%;
+	font-size: 1.25rem;
+	font-weight: bold;
+	justify-self: end;
+}
+
+@media screen and (max-width: 850px) {
+	.projects .grid {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+	.projects .img-link {
+		margin: 0;
+	}
+}
+
+.section-container h2 {
+	position: absolute;
+	color: black;
+	font-weight: bold;
+	font-size: 2rem;
+	/* bottom: 0px; */
+	background-color: none;
+
+	align-self: center;
+	text-align: center;
+	width: 100vw;
+	z-index: 100;
+	padding-bottom: 2rem;
+	margin-bottom: 1rem;
+	padding: 1rem;
+}
+
+/* class for the loce button throughout site*/
+.close-btn {
+	color: red;
+	font-size: 2rem;
+	top: 10px;
+	right: 20px;
+	cursor: pointer;
+}
+
+.section-sidebar li {
+	padding: 0 1rem;
+}
+
+.logo {
+	max-height: 100px;
+}
+.sidebar-header {
+	display: flex;
+	justify-content: space-between;
+	padding: 2rem 1rem;
+	width: 95%;
+}
+
+.preview-img {
+	height: 100px;
+	width: 100px;
+	margin: 1rem auto;
+}
+ul button {
+	padding: 0.5rem;
+	margin: 0.25rem 0.5rem;
+}
+.flex-container {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+.projects-dropdown {
+	background-color: rgb(117, 117, 117);
+}
+
+/*Technologies section right above the footer*/
+.technologies-section {
+	background-color: var(--home-showcase);
+	margin: 0 auto;
+	color: var(--technologies-color);
+}
+
+.projects-page-container {
+	background-color: var(--project-page-background);
+}
+
+/*For external link buttons*/
+.external-link-container {
+	margin-top: 2rem;
+	display: flex;
+	justify-content: center;
+}
+@media screen and (max-width: 500px) {
+	.external-link-container {
+		flex-direction: column;
+		text-align: center;
+	}
+}
+.external-link {
+	margin: 1rem 0.75rem;
+	background-color: var(--external-link-color);
+	padding: 1rem 2rem;
+	color: #eee;
+	font-weight: bold;
+	border-radius: 5px;
+}
+#github-btn {
+	background-color: black;
+}
+#github-btn svg,
+#external-link-linkedin svg {
+	margin-right: 0.5rem;
+}
+#github-btn:hover {
+	background-color: #555;
+}
+#github-btn a {
+	margin-left: 1rem;
+}
+.external-link:hover {
+	background-color: var(--external-link-hover);
+}
+footer {
+	background-color: var(--primary-color);
+}
+footer h4 {
+	height: 5rem;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--background-showcase);
+	color: var(--nav-text-color);
+}
