@@ -9,6 +9,8 @@ import Technologies from "../Components/Technologies";
 const Home = () => {
 	const { theme } = useGlobalContext();
 	const htmlObj = document.documentElement;
+	console.log(document.title);
+	document.title = "Home";
 	htmlObj.className = theme;
 	return (
 		<main>

@@ -175,11 +175,11 @@ const Wrapper = styled.div`
 		}
 		.react-icon {
 			position: absolute;
-			font-size: 1.25rem;
-
-			align-self: center;
+			font-size: 1rem;
+			margin-l;eft: -2rem; 
+			 align-self: center;
 		}
-	}
+	
 `;
 export default Navbar;
 export { NavbarContext };

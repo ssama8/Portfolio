@@ -10,7 +10,6 @@ const Projects = () => {
 			<h2>Project Gallery</h2>
 			{projectsList.map((project, index) => {
 				const { id, heading, image, description2 } = project;
-				console.log(Object.keys(image)[0]);
 				return (
 					<div
 						key={id}

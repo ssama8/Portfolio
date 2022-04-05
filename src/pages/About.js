@@ -4,6 +4,8 @@ import { BsGithub } from "react-icons/bs";
 import { AiFillLinkedin } from "react-icons/ai";
 import Resume from "../images/Resume.pdf";
 const About = () => {
+	document.title = "About";
+
 	return (
 		<Wrapper>
 			<div className='about-container'>

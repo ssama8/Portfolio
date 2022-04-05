@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 const Error = () => {
+	document.title = "Error";
 	return (
 		<Wrapper>
 			<div className='error-container'>

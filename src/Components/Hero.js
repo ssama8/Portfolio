@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import projectsList from "../utils/projectListData";
 const Hero = () => {
-	console.log(projectsList);
 	const defaultId = projectsList[0].id;
 	return (
 		<Wrapper>

@@ -11,6 +11,7 @@ const projectComponents = [
 	<GerdSolutions />,
 ];
 const ProjectsShowcase = () => {
+	document.title = "Projects";
 	const { projectsList } = useGlobalContext();
 	const [validID, setValidID] = useState("");
 	const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +19,6 @@ const ProjectsShowcase = () => {
 	const { id } = useParams();
 	const [currentProject, setCurrentProject] = useState({});
 	useEffect(() => {
-		console.log(projectsList);
 		let project = projectsList.find((project) => project.id === id);
 		if (project) {
 			setValidID(true);
@@ -49,8 +49,6 @@ const ProjectsShowcase = () => {
 	const changeCurrentProject = (index) => {
 		setProjectNum(index);
 	};
-
-	console.log(currentProject);
 
 	const component = projectComponents[projectNum];
 	return (
