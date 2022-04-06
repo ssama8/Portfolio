@@ -105,7 +105,6 @@ const Wrapper = styled.section`
 		background-color: var(--slider-header);
 		margin: 0 auto;
 		top: 0px;
-
 		width: 100vw;
 		max-width: 2200px;
 		z-index: 9;

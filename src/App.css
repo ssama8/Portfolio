@@ -16,12 +16,13 @@ a {
 	--nav-text-color: white;
 	--home-showcase: rgb(5, 4, 54);
 	--primary-color: rgb(36, 55, 119);
-	--slider-header: rgb(40, 158, 179);
-	--slider-overlay-color: rgb(150, 206, 223);
+	--slider-header: rgb(52, 135, 207);;
+	--slider-overlay-color: rgb(0, 0, 0);
 	--project-info: rgb(163, 205, 224);
 	--showcase-text-color: black;
+	--showcase-container-color: rgb(4, 30, 53);
 	--arrow-color: black;
-	--projects-section-background: rgb(221, 229, 236);
+	--projects-section-background: rgb(52, 135, 207);
 	--external-link-color: rgb(182, 67, 0);
 	--external-link-hover: rgb(104, 39, 2);
 
@@ -38,10 +39,10 @@ a {
 	--home-showcase: rgb(204, 246, 204);
 	--primary-color: rgb(97, 221, 66);
 	--slider-header: rgb(7, 155, 56);
-	--slider-overlay-color: rgb(198, 223, 150);
+	--slider-overlay-color: rgb(35, 53, 8);
 	--showcase-text-color: rgb(0, 0, 0);
-	--projects-section-background: rgb(255, 255, 255);
-
+	--projects-section-background: rgb(222, 254, 251);
+	--showcase-container-color: rgb(107, 142, 114);
 	--project-info: rgb(232, 245, 118);
 	--arrow-color: green;
 	--external-link-color: rgb(20, 100, 0);
@@ -61,8 +62,9 @@ a {
 
 	--primary-color: rgb(144, 59, 255);
 	--slider-header: rgb(82, 10, 124);
-	--slider-overlay-color: rgb(212, 119, 212);
+	--slider-overlay-color: rgb(35, 4, 35);
 	--showcase-text-color: rgb(236, 251, 16);
+	--showcase-container-color: rgb(241, 156, 246);
 	--projects-section-background: rgb(249, 255, 162);
 
 	--project-info: rgb(145, 11, 168);
@@ -202,7 +204,8 @@ li p {
 /*showcase slider styles*/
 
 .section-container {
-	background-color: var(--slider-overlay-color);
+	/* background-color: var(--slider-overlay-color); */
+	background-color: var(--showcase-container-color);
 }
 .showcase {
 	display: flex;
@@ -248,11 +251,11 @@ li p {
 	left: 50%;
 	color: var(--showcase-text-color);
 
-	transform: translate(-47.5%, 0%);
+	transform: translate(-50%, 0%);
 	background-color: var(--project-info);
 	transition: translate, 1s;
 	align-items: center;
-	padding: 1rem;
+	padding: 1rem .25rem;
 }
 /*The previous slider item translated to the left*/
 .prev {

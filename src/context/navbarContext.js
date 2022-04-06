@@ -17,7 +17,7 @@ const projects = [
 		image: `url(${ecommerce})
 		center center/cover no-repeat`,
 		description:
-			"Built with React and using NETLIFY serverless functions on  the backend, Samas Sporting Goods is a full stack e-commerce app that has authentication with auth) and is connected with Stripe to process payments. ",
+			"Built with React and using NETLIFY serverless functions on  the backend, Samas Sporting Goods is a full stack e-commerce app that has authentication with auth0 and is connected with Stripe to process payments. ",
 	},
 	{
 		id: 3,

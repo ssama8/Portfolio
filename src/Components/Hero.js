@@ -10,7 +10,7 @@ const Hero = () => {
 			<div className='about'>
 				<div className='grid'>
 					<div>
-						<p> Hello I'm </p>
+						<h4> Hello I'm </h4>
 						<h2>Saket Sama</h2>
 						<div className='underline'></div>
 						<h4>I create web apps </h4>

@@ -8,9 +8,8 @@ import { Router, Link, Route, Routes } from "react-router-dom";
 import Technologies from "../Components/Technologies";
 const Home = () => {
 	const { theme } = useGlobalContext();
-	const htmlObj = document.documentElement;
-	console.log(document.title);
 	document.title = "Home";
+	const htmlObj = document.documentElement;
 	htmlObj.className = theme;
 	return (
 		<main>
