@@ -58,6 +58,13 @@ const Wrapper = styled.section`
 		color: purple;
 		padding: 0;
 		font-size: 0.9rem;
+		margin: 0;
+	}
+	.description {
+		background-color: var(--project-info);
+		color: var(--showcase-text-color);
+		padding: 2rem;
+		border-radius: 5%;
 	}
 	.project-preview-image:hover {
 		cursor: pointer;
@@ -76,6 +83,21 @@ const Wrapper = styled.section`
 		}
 		p {
 			font-size: 1.15rem;
+		}
+	}
+	@media screen and (max-width: 500px) {
+		.grid {
+			width: 100vw;
+			padding: 0;
+			padding: 0rem;
+		}
+
+		.description {
+			font-size: 0.85rem;
+			font-weight: bold;
+
+			padding: 1rem 0.75rem;
+			border-radius: 5px;
 		}
 	}
 `;

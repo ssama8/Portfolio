@@ -8,6 +8,7 @@ import Footer from "./Components/Footer";
 import Error from "./pages/Error";
 import ProjectsShowcase from "./pages/ProjectsShowcase";
 import About from "./pages/About";
+import HamburgerMenu from "./Components/Hamburger";
 function App() {
 	const { theme } = useGlobalContext();
 	const htmlObj = document.documentElement;
@@ -16,7 +17,7 @@ function App() {
 		<Router>
 			<Navbar />
 			<Sidebar />
-
+			<HamburgerMenu />
 			<Routes>
 				<Route path='/' element={<Home />} />
 				<Route path='/projects/:id' element={<ProjectsShowcase />}></Route>

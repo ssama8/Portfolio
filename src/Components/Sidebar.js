@@ -10,6 +10,30 @@ const Sidebar = () => {
 	const handleClick = () => {
 		setIsSidebarOpen(false);
 	};
+	// const changeMenuStyle = () => {
+	// 	const menu = pages.current;
+	// 	const middle = lineMiddle.current;
+	// 	const top = lineTop.current;
+	// 	const bottom = lineBottom.current;
+
+	// 		const lineTop = useRef(null);
+	// 		const lineMiddle = useRef(null);
+	// 		const lineBottom = useRef(null);
+	// 		const pages = useRef(null);
+
+	// 	if (menuStyle === "hamburger-menu") {
+	// 		top.style = "top: 2.5px ; transform: rotate(135deg)";
+	// 		bottom.style = "top: -2.5px ; transform: rotate(135deg)";
+	// 		middle.style.transform = "rotate(45deg)";
+	// 		setMenuStyle("x-menu");
+	// 	} else {
+	// 		top.style = "";
+	// 		bottom.style = "";
+	// 		middle.style.transform = "";
+	// 		setMenuStyle("hamburger-menu");
+	// 	}
+	// };
+
 	return (
 		<section className={isSidebarOpen ? "sidebar sidebar-open" : "sidebar"}>
 			<div className='sidebar-header'>

@@ -46,12 +46,6 @@ const Settings = ({ visibility, listItems }) => {
 				}}>
 				<a href='' onClick={(e) => handleClick(e)} ref={themeButton}>
 					<li>Themes {themeChevron}</li>
-					<li>
-						Slider-Speed
-						<p>
-							<Slider />
-						</p>
-					</li>
 
 					<ul
 						className='settings themes'
@@ -66,6 +60,14 @@ const Settings = ({ visibility, listItems }) => {
 						<li onClick={(e) => changeTheme(e.target.textContent)}>light </li>
 						<li onClick={(e) => changeTheme(e.target.textContent)}> laker</li>
 					</ul>
+				</a>
+				<a>
+					<li>
+						Slider-Speed
+						<p>
+							<Slider />
+						</p>
+					</li>
 				</a>
 				{listItems.slice(0, 0).map((item, index) => {
 					console.log(item);

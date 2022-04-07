@@ -125,5 +125,10 @@ const Wrapper = styled.section`
 			font-size: 2rem;
 		}
 	}
+	@media screen and (max-width: 768px) {
+		.slider {
+			padding: 0.25rem;
+		}
+	}
 `;
 export default Showcase;

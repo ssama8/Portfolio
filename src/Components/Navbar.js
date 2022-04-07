@@ -119,7 +119,7 @@ const Navbar = () => {
 					{/* Hamburger menu styling  */}
 				</nav>
 			</Wrapper>
-			<div
+			{/* <div
 				className='hamburger-menu'
 				onClick={() => {
 					setTimeout(changeMenuStyle(), 250);
@@ -128,7 +128,7 @@ const Navbar = () => {
 				<div className='line-top' ref={lineTop}></div>
 				<div className='line' ref={lineMiddle}></div>
 				<div className='line-bottom' ref={lineBottom}></div>
-			</div>
+			</div> */}
 		</>
 	);
 };

@@ -9,7 +9,7 @@ const Hero = () => {
 		<Wrapper>
 			<div className='about'>
 				<div className='grid'>
-					<div>
+					<div className='summary'>
 						<h4> Hello I'm </h4>
 						<h2>Saket Sama</h2>
 						<div className='underline'></div>
@@ -68,6 +68,8 @@ const Wrapper = styled.div`
 		}
 	}
 	@media screen and (max-width: 768px) {
+		.about {
+		}
 		.grid {
 			flex-direction: column;
 			align-items: center;
@@ -76,11 +78,25 @@ const Wrapper = styled.div`
 		}
 		.grid h2 {
 			margin: 0 auto;
+			font-size: 1.5rem;
 		}
 		.home-icon {
 			height: 30%;
 			transform: translateX(0%);
 			align-self: center;
+		}
+		display: block;
+		.summary {
+			h5 {
+				font-size: 0.75rem;
+				margin-bottom: 1rem;
+				text-align: center;
+				width: 100%;
+			}
+			a.btn {
+				font-size: 0.75rem;
+				padding: 0.75rem 0.25rem;
+			}
 		}
 	}
 	@media screen and (max-width: 500px) {

@@ -3,9 +3,13 @@
 	padding: 0;
 	margin: 0;
 }
+html{
+	overflow-x: hidden;
+}
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	overflow-x: hidden;
+
 }
 a {
 	text-decoration: none;
@@ -78,16 +82,17 @@ a {
 	--technologies-color: rgb(214, 248, 24);
 }
 
+
 /*Navbar Styles*/
 
 main .home-image {
 	background-color: var(--home-showcase);
-	height: 70vh;
+height: 70vh;
 	position: relative;
 }
 .main .home-image:before {
 	position: absolute;
-	height: 70vh;
+	min-height: 70vh;
 	width: 100vw;
 	opacity: 0.7;
 }
@@ -168,10 +173,8 @@ li p {
 .about .grid {
 	display: flex;
 	padding: 2rem;
-	grid-template-columns: repeat(2, 1fr);
 	width: 80vw;
 	max-width: 1200px;
-	grid-gap: 4rem;
 	margin: 0 auto;
 	justify-content: flex-end;
 }
@@ -370,7 +373,21 @@ li p {
 }
 
 /*Styles when the hamburger menu is displayed instead of navbar*/
-
+	.hamburger-menu {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		background-color: rgb(3, 66, 66);
+		width: 50px;
+		padding: 0.25rem 0.5rem;
+		height: 50px;
+		position: fixed;
+		top: 0px;
+		right: 0px;
+	
+		cursor: pointer;
+	}
 @media screen and (max-width: 768px) {
 	nav {
 		display: none;
@@ -378,6 +395,8 @@ li p {
 
 	.hamburger-menu {
 		opacity: 1;
+		z-index: 100; 
+		/* left: calc(100vw - 50px); */
 	}
 	nav {
 		z-index: 1;
@@ -423,24 +442,10 @@ li p {
 		top: 5px;
 	}
 
-	/*Mobile screens*/
-	@media screen and (max-width: 500px) {
-		.showcase p {
-			width: 100vw;
-			font-size: 1rem;
-		}
-		.left-arrow,
-		.right-arrow {
-			transform: scale(0.75);
-		}
-		.projects .grid {
-			width: 100vw;
-		}
-		.description {
-			width: 100vw;
-		}
+	.project-info p{
+		font-size: 0.75rem; 
+		width: 50%; 
 	}
-
 	.sidebar {
 		display: block;
 		position: fixed;
@@ -459,31 +464,28 @@ li p {
 		transform: translate(0);
 		z-index: 50;
 	}
-	.hamburger-menu {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		justify-content: center;
-		background-color: rgb(3, 66, 66);
-		width: 50px;
-		padding: 0.25rem 0.5rem;
-		height: 50px;
-		position: fixed;
-		top: 0px;
-
-		right: 0px;
-		z-index: 100000000 !important;
-		cursor: pointer;
-	}
-
-	/*rotate the lines in the hamburger menu slightly on hover*/
-	.hamburger-menu:hover .line,
-	.hamburger-menu:hover .line-top,
-	.hamburger-menu:hover .line-bottom {
-		transform: rotate(15deg);
-	}
 }
+/*Mobile screens*/
+@media screen and (max-width: 500px) {
+	.showcase p {
+		width: 100vw;
+		font-size: 1rem;
+	}
 
+	.left-arrow,
+	.right-arrow {
+		transform: scale(0.75);
+	}
+
+	.projects .grid {
+		width: 100vw;
+	}
+
+	.description {
+		width: 100vw;
+	}
+
+}
 /*Projects section below the showcase*/
 
 .projects {

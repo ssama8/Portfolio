@@ -8,7 +8,7 @@ const projects = [
 		image: ` url(https://assets.bwbx.io/images/users/iqjWHBFdfxIU/im1bC58uUhvM/v0/-1x-1.jpg)
 		center center/cover no-repeat `,
 		description:
-			"Built with express, nodejs, vanilla js, css, and html, you can buy and sell bathing nfts and even add your own custom nfts to your portfolio.",
+			"Buy and Sell bathing nfts and even add your own custom nfts to your portfolio.",
 	},
 	{
 		id: 2,
@@ -17,7 +17,7 @@ const projects = [
 		image: `url(${ecommerce})
 		center center/cover no-repeat`,
 		description:
-			"Built with React and using NETLIFY serverless functions on  the backend, Samas Sporting Goods is a full stack e-commerce app that has authentication with auth0 and is connected with Stripe to process payments. ",
+			" Full stack e-commerce app that has authentication with auth0 and is connected with Stripe to process payments. ",
 	},
 	{
 		id: 3,
@@ -25,8 +25,7 @@ const projects = [
 		heading: "WordPress Blog",
 		image: `url(${gerdSolutions})
 		top center/cover no-repeat`,
-		description:
-			"Built with express, nodejs, vanilla js, css, and html, you can buy and sell bathing nfts and even add your own custom nfts to your portfolio.",
+		description: "Wordpress blog with rich SEO content and information on GERD",
 	},
 ];
 
