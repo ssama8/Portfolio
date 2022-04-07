@@ -5,7 +5,8 @@ import navPages from "../context/navbarContext";
 import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 const Sidebar = () => {
-	const { isSidebarOpen, setIsSidebarOpen, projectsList } = useGlobalContext();
+	const { isSidebarOpen, setIsSidebarOpen, projectsList, changeMenuStyle } =
+		useGlobalContext();
 	const header = useRef(null);
 	const handleClick = () => {
 		setIsSidebarOpen(false);
@@ -46,13 +47,23 @@ const Sidebar = () => {
 			</div>
 
 			<ul className='pages-small'>
-				<Link to='/' onClick={handleClick}>
+				<Link
+					to='/'
+					onClick={() => {
+						handleClick();
+						changeMenuStyle();
+					}}>
 					<li className='sidebar-menu-item'>
 						<h3 className='nav-links'>Home</h3>
 					</li>
 				</Link>
 
-				<Link to={`/projects/${projectsList[0].id}`} onClick={handleClick}>
+				<Link
+					to={`/projects/${projectsList[0].id}`}
+					onClick={() => {
+						handleClick();
+						changeMenuStyle();
+					}}>
 					<li>
 						<h3 className='nav-links'>Projects</h3>
 					</li>
@@ -61,7 +72,12 @@ const Sidebar = () => {
 				{/* <a href=''>
 							
 							</a> */}
-				<Link to='/about' onClick={handleClick}>
+				<Link
+					to='/about'
+					onClick={() => {
+						handleClick();
+						changeMenuStyle();
+					}}>
 					<li>
 						<h3 className='nav-links'>About</h3>
 					</li>

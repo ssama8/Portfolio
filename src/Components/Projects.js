@@ -64,7 +64,7 @@ const Wrapper = styled.section`
 		background-color: var(--project-info);
 		color: var(--showcase-text-color);
 		padding: 2rem;
-		border-radius: 5%;
+		border-radius: 10px;
 	}
 	.project-preview-image:hover {
 		cursor: pointer;
