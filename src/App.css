@@ -176,7 +176,6 @@ li p {
 	width: 80vw;
 	max-width: 1200px;
 	margin: 0 auto;
-	justify-content: flex-end;
 }
 .grid * {
 	margin: 1rem 0;

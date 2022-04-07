@@ -69,12 +69,12 @@ const Wrapper = styled.div`
 	}
 	@media screen and (max-width: 768px) {
 		.about {
+			top: 0;
 		}
 		.grid {
 			flex-direction: column;
-			align-items: center;
+			align-items: flex-start;
 			text-align: center;
-			justif-content: center;
 		}
 		.grid h2 {
 			margin: 0 auto;
