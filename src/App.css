@@ -3,13 +3,12 @@
 	padding: 0;
 	margin: 0;
 }
-html{
+html {
 	overflow-x: hidden;
 }
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	overflow-x: hidden;
-
 }
 a {
 	text-decoration: none;
@@ -20,7 +19,7 @@ a {
 	--nav-text-color: white;
 	--home-showcase: rgb(5, 4, 54);
 	--primary-color: rgb(36, 55, 119);
-	--slider-header: rgb(52, 135, 207);;
+	--slider-header: rgb(52, 135, 207);
 	--slider-overlay-color: rgb(0, 0, 0);
 	--project-info: rgb(163, 205, 224);
 	--showcase-text-color: black;
@@ -82,12 +81,11 @@ a {
 	--technologies-color: rgb(214, 248, 24);
 }
 
-
 /*Navbar Styles*/
 
 main .home-image {
 	background-color: var(--home-showcase);
-height: 70vh;
+	height: 70vh;
 	position: relative;
 }
 .main .home-image:before {
@@ -257,7 +255,7 @@ li p {
 	background-color: var(--project-info);
 	transition: translate, 1s;
 	align-items: center;
-	padding: 1rem .25rem;
+	padding: 1rem 0.25rem;
 }
 /*The previous slider item translated to the left*/
 .prev {
@@ -372,21 +370,21 @@ li p {
 }
 
 /*Styles when the hamburger menu is displayed instead of navbar*/
-	.hamburger-menu {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		justify-content: center;
-		background-color: rgb(3, 66, 66);
-		width: 50px;
-		padding: 0.25rem 0.5rem;
-		height: 50px;
-		position: fixed;
-		top: 0px;
-		right: 0px;
-	
-		cursor: pointer;
-	}
+.hamburger-menu {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	background-color: rgb(3, 66, 66);
+	width: 50px;
+	padding: 0.25rem 0.5rem;
+	height: 50px;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+
+	cursor: pointer;
+}
 @media screen and (max-width: 768px) {
 	nav {
 		display: none;
@@ -394,7 +392,7 @@ li p {
 
 	.hamburger-menu {
 		opacity: 1;
-		z-index: 100; 
+		z-index: 100;
 		/* left: calc(100vw - 50px); */
 	}
 	nav {
@@ -441,9 +439,9 @@ li p {
 		top: 5px;
 	}
 
-	.project-info p{
-		font-size: 0.75rem; 
-		width: 50%; 
+	.project-info p {
+		font-size: 0.75rem;
+		width: 50%;
 	}
 	.sidebar {
 		display: block;
@@ -483,7 +481,6 @@ li p {
 	.description {
 		width: 100vw;
 	}
-
 }
 /*Projects section below the showcase*/
 
@@ -672,4 +669,10 @@ footer h4 {
 	justify-content: center;
 	background-color: var(--background-showcase);
 	color: var(--nav-text-color);
+}
+
+/*Error Page*/
+
+#error-container {
+	background-color: white;
 }

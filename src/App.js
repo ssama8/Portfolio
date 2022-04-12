@@ -3,7 +3,6 @@ import { useGlobalContext } from "./context/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
-
 import Footer from "./Components/Footer";
 import Error from "./pages/Error";
 import ProjectsShowcase from "./pages/ProjectsShowcase";

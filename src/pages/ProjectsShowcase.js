@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Link, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../context/context";
 import NFTCollectorPost from "../Components/projectWalkthroughs/NFTCollectorPost";
 import SportingGoods from "../Components/projectWalkthroughs/SportingGoodsPost";
@@ -11,13 +11,16 @@ const projectComponents = [
 	<GerdSolutions />,
 ];
 const ProjectsShowcase = () => {
-	document.title = "Projects";
+	document.title = "Project";
+	console.log(document.head);
 	const { projectsList } = useGlobalContext();
 	const [validID, setValidID] = useState("");
 	const [isLoading, setIsLoading] = useState(true);
 	const [projectNum, setProjectNum] = useState(0);
 	const { id } = useParams();
-	const [currentProject, setCurrentProject] = useState({});
+	/*Used to redirect to home if there is an error getting the product*/
+	const navigate = useNavigate();
+
 	useEffect(() => {
 		let project = projectsList.find((project) => project.id === id);
 		if (project) {
@@ -43,6 +46,10 @@ const ProjectsShowcase = () => {
 			<Wrapper>
 				{" "}
 				<h2>There was an error, redirecting to home page</h2>
+				<div className='spinner'></div>
+				{setTimeout(() => {
+					navigate("/");
+				}, 3000)}
 			</Wrapper>
 		);
 	}
@@ -51,6 +58,7 @@ const ProjectsShowcase = () => {
 	};
 
 	const component = projectComponents[projectNum];
+
 	return (
 		<div className='projects-page-container'>
 			<Wrapper>
@@ -67,8 +75,6 @@ const ProjectsShowcase = () => {
 							);
 						})}
 					</div>
-
-					{/* <h2 className='project-name'>{heading}</h2> */}
 				</div>
 
 				{component}
@@ -78,7 +84,7 @@ const ProjectsShowcase = () => {
 };
 
 const Wrapper = styled.section`
-	min-height: 100vh;
+	min-height: calc(100vh - 10rem);
 	// background-color: #333;
 	padding: 2rem;
 	margin: 0 auto;
@@ -87,6 +93,7 @@ const Wrapper = styled.section`
 
 	h2 {
 		font-size: 2.5rem;
+		text-align: center;
 	}
 	.spinner {
 		width: 6rem;
@@ -97,6 +104,11 @@ const Wrapper = styled.section`
 		border: 4px solid #ccc;
 		border-top-color: blue;
 		animation: spinner 0.75s linear infinite;
+	}
+	@keyframes spinner {
+		to {
+			transform: rotate(360deg);
+		}
 	}
 	.project-name {
 		margin: 1.5rem 0;

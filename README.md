@@ -4,7 +4,11 @@ Responsive Portfolio website to display the different projects I've made so far.
 
 ## Home Page
 
-The home page has an overview at the top and a showcase with a slider that smoothly toggles through every project. You can turn the slider off and on, as well as change the slider speed in the settings. Below the slider has a section with a brief description for each project and links to go to th e projects page. At the bottom has a sectionwith all of the technologies I have experience with
+The home page has an overview at the top and a showcase with a slider that smoothly toggles through every project. 
+
+This is done using useEffect that runs every x seconds depending on the value of the variable. In the settings dropdown you can change the speed of the slider o make it slower or faster. 
+
+You can also turn the slider off and on, as well as change the slider speed in the settings. Below the slider has a section with a brief description for each project and links to go to th e projects page. At the bottom has a sectionwith all of the technologies I have experience with
 
 ### Projects
 
