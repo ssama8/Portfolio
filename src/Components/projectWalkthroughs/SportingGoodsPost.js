@@ -304,7 +304,10 @@ const Wrapper = styled.section`
 			margin: 0rem 0;
 		}
 	}
-	@media screen and (max-width: 750px) {
+	@media screen and (max-width: 768px) {
+		.showcase-post:before {
+			margin-top: -5rem;
+		}
 		.content-section {
 			width: 80vw;
 

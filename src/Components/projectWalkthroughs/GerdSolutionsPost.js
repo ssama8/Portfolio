@@ -103,6 +103,7 @@ const Wrapper = styled.section`
 		top: 5em;
 		align-self: center;
 		// margin-top: 10vh;
+
 		height: 100vh;
 		width: 100vw;
 		z-index: 100;
@@ -144,6 +145,7 @@ const Wrapper = styled.section`
 		background-color: #eee;
 		opacity: 0.5;
 		width: 100%;
+		// margin-top: -5rem;
 		height: 100vh;
 	}
 	h3 {
@@ -221,7 +223,10 @@ const Wrapper = styled.section`
 			margin: 0rem 0;
 		}
 	}
-	@media screen and (max-width: 750px) {
+	@media screen and (max-width: 768px) {
+		.showcase-post:before {
+			margin-top: -5rem;
+		}
 		.content-section {
 			width: 80vw;
 
