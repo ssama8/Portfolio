@@ -83,7 +83,9 @@ const Showcase = () => {
 						<div className={setClasses(indx)} key={id}>
 							<h3>{heading} </h3>
 							<p>{description}</p>
-							<Link to={`projects/${projectsList[indx].id}`}>Click Here</Link>
+							<Link to={`projects/${projectsList[indx].id}`}>
+								View {heading}
+							</Link>
 						</div>
 					);
 				})}

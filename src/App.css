@@ -126,10 +126,11 @@ nav ul {
 }
 /*styles for the direct child ul of the navbar  */
 .pages {
-	display: block;
+	display: flex;
+	justify-content: center;
 }
 .pages li {
-	transition: all 1s;
+	transition: all 0.25s;
 }
 .pages h3 {
 	font-size: 1.25rem;
@@ -185,8 +186,9 @@ li p {
 }
 .grid p {
 	font-size: 1.25rem;
+	font-weight: bold;
 }
-.grid h2 {
+.grid h1 {
 	font-size: 3rem;
 	box-shadow: 0 5px red;
 }
@@ -281,8 +283,11 @@ li p {
 	color: var(--about-color);
 	font-weight: bold;
 	padding: 1rem 1.5rem;
+	transition: all 0.25s;
 }
-
+.project-info a:hover {
+	background-color: var(--primary-color);
+}
 .project-info h3 {
 	font-size: 2rem;
 }
@@ -539,7 +544,7 @@ li p {
 	justify-self: end;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1000px) {
 	.projects .grid {
 		flex-direction: column;
 		align-items: center;

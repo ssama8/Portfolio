@@ -10,8 +10,8 @@ const Hero = () => {
 			<div className='about'>
 				<div className='grid'>
 					<div className='summary'>
-						<h4> Hello I'm </h4>
-						<h2>Saket Sama</h2>
+						<p> Hello I'm </p>
+						<h1>Saket Sama</h1>
 						<div className='underline'></div>
 						<h4>I create web apps </h4>
 						<h5>
@@ -23,7 +23,7 @@ const Hero = () => {
 							Checkout My Work
 						</Link>
 					</div>
-					<img className='home-icon' src={logo} />
+					<img className='home-icon' src={logo} alt='home icon' />
 				</div>
 			</div>
 		</Wrapper>
@@ -44,7 +44,6 @@ const Wrapper = styled.div`
 			width: 80vw;
 		}
 		.grid div * {
-			// width: 70%;
 			margin: 0.75rem 0;
 		}
 		.grid p {

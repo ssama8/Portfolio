@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import nftSignUpForm from "../../images/nft-collector-images/Signup-Form.png";
 import featuredProjects from "../../images/sporting-goods-images/featured-products.png";
 import singleProduct from "../../images/sporting-goods-images/single-product.png";
 import checkout from "../../images/sporting-goods-images/cart-page.png";
@@ -23,8 +22,14 @@ const SportingGoods = () => {
 					<img src={showcaseSrc} alt='' />
 				</div>
 			</div>
-			<iframe className='video' src='https://www.youtube.com/embed/ao6imr02_5w'>
-				<a href='https://www.youtube.com/watch?v=ao6imr02_5w' target='_blank'>
+			<iframe
+				className='video'
+				src='https://www.youtube.com/embed/ao6imr02_5w'
+				title='Samas Sporting Goods Project Walkthrough'>
+				<a
+					href='https://www.youtube.com/watch?v=ao6imr02_5w'
+					target='_blank'
+					rel='noreferrer'>
 					Watch Walkthrough
 				</a>
 			</iframe>
@@ -33,6 +38,7 @@ const SportingGoods = () => {
 				<a
 					href='https://samas-sporting-goods-store.netlify.app/'
 					target='_blank'
+					rel='noreferrer'
 					className='external-link'>
 					Go To Project
 				</a>
@@ -40,6 +46,7 @@ const SportingGoods = () => {
 					href='https://github.com/ssama8/react-ecommerce-project'
 					target='_blank'
 					className='external-link'
+					rel='noreferrer'
 					id='github-btn'>
 					<BsGithub />
 					View Github Repo
@@ -56,7 +63,6 @@ const SportingGoods = () => {
 							setShowcaseSrc(e.target.src);
 							setShowcaseVisibility("block");
 						}}
-						// src='https://assets.bwbx.io/images/users/iqjWHBFdfxIU/im1bC58uUhvM/v0/-1x-1.jpg'
 						alt='Featured Projects'
 					/>
 					<p className='top-p'>
@@ -284,7 +290,6 @@ const Wrapper = styled.section`
 		img {
 			width: 100%;
 			height: 80%;
-			// border-radius: 10px;
 		}
 		p {
 			font-size: 1.1rem;

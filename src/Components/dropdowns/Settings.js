@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useContext } from "react";
+import React, { useRef, useState } from "react";
 import { useGlobalContext } from "../../context/context.js";
 import Slider from "../Slider.js";
 
@@ -13,9 +13,6 @@ const Settings = ({ visibility, listItems }) => {
 
 	const handleClick = (e) => {
 		e.preventDefault();
-		const { current } = themeButton;
-		const attribute = current.getBoundingClientRect();
-		console.log(current);
 		setPosition({
 			...position,
 			top: 10,
@@ -30,7 +27,6 @@ const Settings = ({ visibility, listItems }) => {
 		}
 	};
 
-	const themesList = ["dark", "light", "laker"];
 	return (
 		<Wrapper>
 			<ul
@@ -44,72 +40,40 @@ const Settings = ({ visibility, listItems }) => {
 					// top: settingsPosition.top,
 					// left: settingsPosition.left,
 				}}>
-				<a href='' onClick={(e) => handleClick(e)} ref={themeButton}>
-					<li>Themes {themeChevron}</li>
+				<li onClick={(e) => handleClick(e)}>Themes {themeChevron}</li>
 
-					<ul
-						className='settings themes'
-						ref={themeButton}
-						style={{
-							display: themeVisibility,
-							position: "absolute",
-							top: 30,
-							right: -70,
-						}}>
-						<li onClick={(e) => changeTheme(e.target.textContent)}>dark</li>
-						<li onClick={(e) => changeTheme(e.target.textContent)}>light </li>
-						<li onClick={(e) => changeTheme(e.target.textContent)}> laker</li>
-					</ul>
-				</a>
-				<a>
-					<li>
-						Slider-Speed
-						<p>
-							<Slider />
-						</p>
-					</li>
-				</a>
-				{listItems.slice(0, 0).map((item, index) => {
-					console.log(item);
-					const { heading, ul, listItems } = item;
-
-					return (
-						<a
-							key={index}
-							onClick={(e) => ul && handleClick(e)}
-							ref={themeButton}>
-							<li>
-								{heading} {ul && themeChevron}
-								<p>{heading === "Slider-Speed" && <Slider />}</p>
-							</li>
-						</a>
-					);
-				})}
-				{/* <ul
-					className='settings '
+				<ul
+					className='settings themes'
+					ref={themeButton}
 					style={{
 						display: themeVisibility,
 						position: "absolute",
-						zIndex: 10000000,
-						top: 10,
-						marginLeft: "150px",
-					}}
-					onClick={(e) => changeTheme(e.target.textContent)}>
-					{themesList.map((item, index) => {
-						return <li key={index}>{item}</li>;
-					})}
-				</ul> */}
+						top: 30,
+						right: -70,
+					}}>
+					<li onClick={(e) => changeTheme(e.target.textContent)}>dark</li>
+					<li onClick={(e) => changeTheme(e.target.textContent)}>light </li>
+					<li onClick={(e) => changeTheme(e.target.textContent)}> laker</li>
+				</ul>
+				<li>
+					Slider-Speed
+					<p>
+						<Slider />
+					</p>
+				</li>
 			</ul>
 		</Wrapper>
 	);
 };
 
 const Wrapper = styled.section`
+	li {
+		cursor: pointer;
+	}
 	@media screen and (max-width: 1400px) {
 		.themes {
 			margin: 20px;
 			margin-top: -20px;
-			// background-color: black;
 		}
 		.themes li {
 			padding: 1rem;

@@ -2,6 +2,7 @@ import React from "react";
 import { useGlobalContext } from "../context/context";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { BsGithub } from "react-icons/bs";
 
 const Projects = () => {
 	const { projectsList } = useGlobalContext();
@@ -9,14 +10,13 @@ const Projects = () => {
 		<Wrapper className='projects'>
 			<h2>Project Gallery</h2>
 			{projectsList.map((project, index) => {
-				const { id, heading, image, description2 } = project;
+				const { id, heading, image, description2, github, link } = project;
 				return (
 					<div
 						key={id}
 						className={
 							index === projectsList.length - 1 ? "last-project" : null
 						}>
-						{/* <div className='heading-image'> */}
 						<h3>{heading}</h3>
 						<div className='grid'>
 							<Link to={`projects/${id}`} className='img-link'>
@@ -28,14 +28,31 @@ const Projects = () => {
 							</Link>
 							<p className='description'>
 								{description2}
-								<Link className='btn-read' id='read more' to={`projects/${id}`}>
-									Read More
+								<Link className='btn-read' to={`projects/${id}`}>
+									Read More about {heading}
 								</Link>
-								{/* <a href='' className='btn-read' id='read more'></a> */}
+								<div className='container'>
+									{github && (
+										<a
+											href={github}
+											target='_blank'
+											rel='noreferrer'
+											className='external-link'
+											id='github-btn'
+											aria-label={`Source code for ${heading}`}>
+											Src Code
+										</a>
+									)}
+									<a
+										href={link}
+										target='_blank'
+										rel='noreferrer'
+										className={"external-link test"}>
+										View
+									</a>
+								</div>
 							</p>
 						</div>
-
-						{/* </div> */}
 					</div>
 				);
 			})}
@@ -43,6 +60,24 @@ const Projects = () => {
 	);
 };
 const Wrapper = styled.section`
+	.container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		font-size: 1rem;
+		margin-top: 1rem;
+		.external-link {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0.25rem 0.5rem;
+			margin: 0 1rem;
+		}
+		.test {
+			padding: 1rem;
+		}
+	}
+
 	h2 {
 		padding: 1rem 0;
 		text-align: center;
@@ -77,7 +112,7 @@ const Wrapper = styled.section`
 		font-size: 1.5rem;
 		justify-self: flex-end;
 	}
-	@media screen and (max-width: 1000px) {
+	@media screen and (max-width: 1100px) {
 		h3 {
 			font-size: 1.5rem;
 		}

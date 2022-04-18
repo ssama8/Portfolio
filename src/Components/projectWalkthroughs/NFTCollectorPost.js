@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import nftCollectorLogin from "../../images/nft-collector-images/nftcollector-loginstate.png";
 import nftSignUpForm from "../../images/nft-collector-images/Signup-Form.png";
-import nftportfolio from "../../images/nft-collector-images/nftcollector-portfolio.png";
 import nftaddnft from "../../images/nft-collector-images/nft-collector-add-nft.png";
 import styled from "styled-components";
 import { MdOutlineClose } from "react-icons/md";
@@ -23,7 +21,10 @@ const NFTCollectorPost = () => {
 					<img src={showcaseSrc} alt='' />
 				</div>
 			</div>
-			<iframe className='video' src='https://www.youtube.com/embed/HZwRwOPMf5U'>
+			<iframe
+				className='video'
+				src='https://www.youtube.com/embed/HZwRwOPMf5U'
+				title='nft-collector project walkthrough'>
 				<a href='https://www.youtube.com/watch?v=HZwRwOPMf5U'>
 					Watch Walkthrough
 				</a>
@@ -32,12 +33,14 @@ const NFTCollectorPost = () => {
 				<a
 					href='https://nft-collector.herokuapp.com/'
 					target='_blank'
-					className='external-link'>
+					className='external-link'
+					rel='noreferrer'>
 					Go To Project
 				</a>
 				<a
 					href='https://github.com/ssama8/NFT-Collector'
 					target='_blank'
+					rel='noreferrer'
 					className='external-link'
 					id='github-btn'>
 					<BsGithub />

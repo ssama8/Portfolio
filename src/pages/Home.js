@@ -4,7 +4,6 @@ import Showcase from "../Components/Showcase";
 import Projects from "../Components/Projects.js";
 import Hero from "../Components/Hero";
 import { useGlobalContext } from "../context/context";
-import { Router, Link, Route, Routes } from "react-router-dom";
 import Technologies from "../Components/Technologies";
 const Home = () => {
 	const { theme } = useGlobalContext();

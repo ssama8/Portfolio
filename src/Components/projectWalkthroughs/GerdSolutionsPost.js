@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { MdOutlineClose } from "react-icons/md";
-import nftSignUpForm from "../../images/nft-collector-images/Signup-Form.png";
-import featuredProjects from "../../images/sporting-goods-images/featured-products.png";
-import singleProduct from "../../images/sporting-goods-images/single-product.png";
-import checkout from "../../images/sporting-goods-images/cart-page.png";
 import lowStomachAcid from "../../images/gerdsolutions-site.png";
 const GerdSolutions = () => {
 	const [showcaseVisibility, setShowcaseVisibility] = useState("none");
@@ -25,7 +21,8 @@ const GerdSolutions = () => {
 			<a
 				href='https://gerdsolutions.com/'
 				target='_blank'
-				className='external-link'>
+				className='external-link'
+				rel='noreferrer'>
 				Go To Project
 			</a>
 			<h3>Overview</h3>

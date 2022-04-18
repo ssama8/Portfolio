@@ -10,6 +10,7 @@ const projects = [
 		description:
 			"Built with express, nodejs, vanilla js, css, and html, you can buy and sell bathing nfts and even add your own custom nfts to your portfolio.",
 		description2: `NFT Collector uses node and express on the backend and plain old javascript on the front end. It has user authentication using a rest api that stores users as well as different nfts the user can dynamically add. It has all of the CRUD ...`,
+		github: "https://github.com/ssama8/NFT-Collector",
 	},
 
 	{
@@ -21,6 +22,7 @@ const projects = [
 			"Built with React and using NETLIFY serverless functions on  the backend, Samas Sporting Goods is a full stack e-commerce app that has authentication with auth 0  and is connected with Stripe to process payments. ",
 		description2:
 			"Samas Sporting Goods is built with React and a rest api built with netlify serverless functions to provide data for the different products of the store. It uses react router to navigate between the different pages and has user authenticantion with auth0. The app relies...",
+		github: "https://github.com/ssama8/react-ecommerce-project",
 	},
 	{
 		id: "4703da7c-fa33-424f-ba57-44cf4a81bb1e",

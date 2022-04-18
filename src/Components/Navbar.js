@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { useGlobalContext } from "../context/context";
 import Settings from "./dropdowns/Settings.js";
 import { FiChevronUp, FiChevronDown } from "react-icons/fi";
@@ -11,19 +11,12 @@ import { Link } from "react-router-dom";
 const NavbarContext = React.createContext();
 
 const Navbar = () => {
-	const { isSidebarOpen, setIsSidebarOpen, projectsList } = useGlobalContext();
+	const { projectsList } = useGlobalContext();
 
-	const lineTop = useRef(null);
-	const lineMiddle = useRef(null);
-	const lineBottom = useRef(null);
 	const pages = useRef(null);
-
 	const [settingsVisibility, setSettingsVisibilty] = useState("none");
-	const [projectsVisibility, setProjectsVisibilty] = useState("none");
 
 	const [settingsChevron, setSettingsChevron] = useState(<FiChevronDown />);
-
-	const [menuStyle, setMenuStyle] = useState("hamburger-menu");
 
 	const setListPosition = (e) => {
 		e.preventDefault();
@@ -37,59 +30,32 @@ const Navbar = () => {
 		}
 	};
 
-	const changeMenuStyle = () => {
-		const menu = pages.current;
-		const middle = lineMiddle.current;
-		const top = lineTop.current;
-		const bottom = lineBottom.current;
-		if (menuStyle === "hamburger-menu") {
-			top.style = "top: 2.5px ; transform: rotate(135deg)";
-			bottom.style = "top: -2.5px ; transform: rotate(135deg)";
-			middle.style.transform = "rotate(45deg)";
-			setMenuStyle("x-menu");
-		} else {
-			top.style = "";
-			bottom.style = "";
-			middle.style.transform = "";
-			setMenuStyle("hamburger-menu");
-		}
-	};
-
 	return (
 		<>
 			<Wrapper>
 				<nav>
 					<div className='nav-container'>
 						<img src={logo} alt='s logo' />
-
 						<ul className='pages' ref={pages} style={{ position: "relative" }}>
-							<Link to='/'>
-								<li>
+							<li>
+								<Link to='/'>
 									<h3>Home</h3>
-								</li>
-							</Link>
+								</Link>
+							</li>
 
-							<Link to={`/projects/${projectsList[0].id}`}>
-								<li>
+							<li>
+								<Link to={`/projects/${projectsList[0].id}`}>
 									<h3>Projects</h3>
-								</li>
-							</Link>
-
-							{/* <a href=''>
-							
-							</a> */}
-							<Link to='/about'>
-								<li>
+								</Link>
+							</li>
+							<li>
+								<Link to='/about'>
 									<h3>About</h3>
-								</li>
-							</Link>
-
-							<a href='' onClick={setListPosition}>
-								<li>
-									{" "}
-									<h3>Settings{settingsChevron}</h3>
-								</li>
-							</a>
+								</Link>
+							</li>
+							<li style={{ cursor: "pointer" }} onClick={setListPosition}>
+								<h3>Settings{settingsChevron}</h3>
+							</li>
 
 							<li style={{ position: "relative" }}>
 								<Settings
@@ -97,52 +63,39 @@ const Navbar = () => {
 									listItems={navPages[navPages.length - 1].listItems}
 								/>
 							</li>
-							<a
-								href='https://github.com/ssama8'
-								target='_blank'
-								className='react-icon'>
-								<li>
+							<li>
+								<a
+									href='https://github.com/ssama8'
+									rel='noreferrer'
+									target='_blank'
+									className='react-icon'
+									aria-label='github icon'>
 									<GoMarkGithub />
-								</li>
-							</a>
-							<a
-								href='https://www.linkedin.com/in/saket-sama-748526201/'
-								target='_blank'
-								className='react-icon linkedin'>
-								<li>
+								</a>
+							</li>
+							<li>
+								<a
+									href='https://www.linkedin.com/in/saket-sama-748526201/'
+									target='_blank'
+									rel='noreferrer'
+									className='react-icon linkedin'
+									aria-label='linkedin icon'>
 									<BsLinkedin />
-								</li>
-							</a>
+								</a>
+							</li>
 						</ul>
 					</div>
-
-					{/* Hamburger menu styling  */}
 				</nav>
 			</Wrapper>
-			{/* <div
-				className='hamburger-menu'
-				onClick={() => {
-					setTimeout(changeMenuStyle(), 250);
-					setIsSidebarOpen(!isSidebarOpen);
-				}}>
-				<div className='line-top' ref={lineTop}></div>
-				<div className='line' ref={lineMiddle}></div>
-				<div className='line-bottom' ref={lineBottom}></div>
-			</div> */}
 		</>
 	);
 };
 
 const Wrapper = styled.div`
 	.react-icon {
-		position: absolute;
-		font-size: 1.75rem;
+		font-size: 2rem;
+	}
 
-		align-self: center;
-	}
-	.linkedin {
-		margin-left: 3rem;
-	}
 	@media screen and (max-width: 1400px) {
 		.nav-container {
 			width: 70vw;
@@ -171,12 +124,10 @@ const Wrapper = styled.div`
 
 	@media screen and (max-width: 990px) {
 		.pages h3 {
-			font-size: 0.8rem;
+			font-size: 1rem;
 		}
 		.react-icon {
-			position: absolute;
-			font-size: 1rem;
-			margin-l;eft: -2rem; 
+			font-size: 1.Z5rem;
 			 align-self: center;
 		}
 	
