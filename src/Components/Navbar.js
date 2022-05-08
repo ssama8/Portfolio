@@ -35,7 +35,7 @@ const Navbar = () => {
 			<Wrapper>
 				<nav>
 					<div className='nav-container'>
-						<img src={logo} alt='s logo' />
+						<img src={logo} className='logo' alt='S logo' />
 						<ul className='pages' ref={pages} style={{ position: "relative" }}>
 							<li>
 								<Link to='/'>
@@ -92,6 +92,10 @@ const Navbar = () => {
 };
 
 const Wrapper = styled.div`
+	.logo{
+		margin-top: -1rem; 
+		transform : scale(1.25); 
+	}
 	.react-icon {
 		font-size: 2rem;
 	}
