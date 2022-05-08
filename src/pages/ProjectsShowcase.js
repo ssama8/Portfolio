@@ -5,14 +5,15 @@ import { useGlobalContext } from "../context/context";
 import NFTCollectorPost from "../Components/projectWalkthroughs/NFTCollectorPost";
 import SportingGoods from "../Components/projectWalkthroughs/SportingGoodsPost";
 import GerdSolutions from "../Components/projectWalkthroughs/GerdSolutionsPost";
+import NBATriviaPost from "../Components/projectWalkthroughs/NBATriviaPost";
 const projectComponents = [
 	<NFTCollectorPost />,
+	<NBATriviaPost />,
 	<SportingGoods />,
 	<GerdSolutions />,
 ];
 const ProjectsShowcase = () => {
 	document.title = "Project";
-	console.log(document.head);
 	const { projectsList } = useGlobalContext();
 	const [validID, setValidID] = useState("");
 	const [isLoading, setIsLoading] = useState(true);
@@ -90,7 +91,10 @@ const Wrapper = styled.section`
 	margin: 0 auto;
 	margin-top: 5rem;
 	max-width: 1400px;
-
+	img,
+	svg {
+		cursor: pointer;
+	}
 	h2 {
 		font-size: 2.5rem;
 		text-align: center;

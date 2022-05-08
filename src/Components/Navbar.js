@@ -94,7 +94,7 @@ const Navbar = () => {
 const Wrapper = styled.div`
 	.logo{
 		margin-top: -1rem; 
-		transform : scale(1.25); 
+		height: 40px; 
 	}
 	.react-icon {
 		font-size: 2rem;
@@ -104,6 +104,7 @@ const Wrapper = styled.div`
 		.nav-container {
 			width: 70vw;
 		}
+
 		.settings {
 			padding: 0rem;
 			font-size: 0.75rem;
@@ -121,9 +122,7 @@ const Wrapper = styled.div`
 		.pages h3 {
 			font-size: 1rem;
 		}
-		img {
-			height: 30px;
-		}
+	
 	}
 
 	@media screen and (max-width: 990px) {
@@ -131,7 +130,7 @@ const Wrapper = styled.div`
 			font-size: 1rem;
 		}
 		.react-icon {
-			font-size: 1.Z5rem;
+			font-size: 1.25rem;
 			 align-self: center;
 		}
 	

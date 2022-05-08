@@ -1,5 +1,6 @@
 import ecommerce from "../images/eccomerce-screenshot.png";
 import gerdSolutions from "../images/gerdsolutions-site.png";
+import nba from "../images/nba-trivia-screenshot.png";
 
 const projects = [
 	{
@@ -11,6 +12,17 @@ const projects = [
 			"Built with express, nodejs, vanilla js, css, and html, you can buy and sell bathing nfts and even add your own custom nfts to your portfolio.",
 		description2: `NFT Collector uses node and express on the backend and plain old javascript on the front end. It has user authentication using a rest api that stores users as well as different nfts the user can dynamically add. It has all of the CRUD ...`,
 		github: "https://github.com/ssama8/NFT-Collector",
+	},
+	{
+		id: "7ed7a2b9-0318-4cb2-8ce6-b25e2ec0c6b7",
+		link: "https://nba-quiz-app-2017-2018.netlify.app/",
+		heading: "NBA Trivia (2017-2018)",
+		image: `${nba}`,
+		description:
+			"Completed Full Stack NBA trivia app where users are able to create an account and take quizzes on all of the 30 teams, based on the 2017-2018 NBA season.",
+		description2:
+			"NBA Trivia (2017-2018) ia a full-stack app that uses React, Tailwind, and CSS on the frontend, and Node, Express, and MongoDB on the backend. It gets data on 400+ different players from the 2018 season and dynamically creates questions asking about...",
+		github: "https://github.com/ssama8/NBA-Quiz-App-",
 	},
 
 	{
