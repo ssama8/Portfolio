@@ -16,8 +16,9 @@ const Hero = () => {
 						<h4>I create web apps </h4>
 						<h5>
 							{" "}
-							Front End Engineer who designs and develops Responsive UIs and
-							Uxs. Also well-versed in technical SEO and SEO best practices{" "}
+							Full-Stack Developer with an emphasis in Frontend Web Development
+							with React. Also well-versed in technical SEO and SEO best
+							practices{" "}
 						</h5>
 						<Link className='btn' to={`/projects/${defaultId}`}>
 							Checkout My Work
